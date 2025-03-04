@@ -11,11 +11,11 @@ local Games = {
   [16732694052] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Fisch.lua", -- Fisch
   [116495829188952] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Dead%20Rails.lua", -- Dead Rails
   [70876832253163] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Dead%20Rails.lua", -- Dead Rails
-  [70876832253163] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Dead%20Rails.lua", -- Dead Rails
-  [70876832253163] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Dead%20Rails.lua", -- Dead Rails
-  [70876832253163] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Dead%20Rails.lua", -- Dead Rails
-  [70876832253163] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Dead%20Rails.lua", -- Dead Rails
-  [70876832253163] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Dead%20Rails.lua", -- Dead Rails
+  [893973440] = "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/Derp.lua", -- Dead Rails
+  [893973440] = "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/GlowESP.lua", -- Dead Rails
+  [893973440] = "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/WoldanHackFTF.lua", -- Dead Rails
+  [893973440] = "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/WoldanAdmin.lua", -- Dead Rails
+  [893973440] = "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/SpeedStrafe.lua", -- Dead Rails
 }
 
 return Games
