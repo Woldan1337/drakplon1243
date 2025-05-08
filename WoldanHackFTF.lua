@@ -40,6 +40,8 @@ local ButtonsFrame_2 = Instance.new("Frame")
 local UIGridLayout_3 = Instance.new("UIGridLayout")
 local NeverFailButton = Instance.new("TextButton")
 local AutoPlayButton = Instance.new("TextButton")
+local MevlanaButton = Instance.new("TextButton")
+local SpeedHackButton = Instance.new("TextButton")
 local AutoInteractButton = Instance.new("TextButton")
 local BeastCamButton = Instance.new("TextButton")
 local TopBar_3 = Instance.new("Frame")
@@ -520,12 +522,38 @@ AutoInteractButton.TextScaled = true
 AutoInteractButton.TextSize = 14.000
 AutoInteractButton.TextWrapped = true
 
+MevlanaButton.Name = "MevlanaButton"
+MevlanaButton.Parent = ButtonsFrame_2
+MevlanaButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+MevlanaButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MevlanaButton.BorderSizePixel = 0
+MevlanaButton.LayoutOrder = 3
+MevlanaButton.Size = UDim2.new(0, 200, 0, 50)
+MevlanaButton.Text = "Mevlana"
+MevlanaButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+MevlanaButton.TextScaled = true
+MevlanaButton.TextSize = 14.000
+MevlanaButton.TextWrapped = true
+
+SpeedHackButton.Name = "SpeedHackButton"
+SpeedHackButton.Parent = ButtonsFrame_2
+SpeedHackButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+SpeedHackButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SpeedHackButton.BorderSizePixel = 0
+SpeedHackButton.LayoutOrder = 4
+SpeedHackButton.Size = UDim2.new(0, 200, 0, 50)
+SpeedHackButton.Text = "Speed Hack"
+SpeedHackButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedHackButton.TextScaled = true
+SpeedHackButton.TextSize = 14.000
+SpeedHackButton.TextWrapped = true
+
 BeastCamButton.Name = "BeastCamButton"
 BeastCamButton.Parent = ButtonsFrame_2
 BeastCamButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
 BeastCamButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 BeastCamButton.BorderSizePixel = 0
-BeastCamButton.LayoutOrder = 3
+BeastCamButton.LayoutOrder = 5
 BeastCamButton.Size = UDim2.new(0, 200, 0, 50)
 BeastCamButton.Text = "Beast Cam"
 BeastCamButton.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -664,12 +692,12 @@ local playertoggle = false
 local bestpctoggle = false
 local exitstoggle = false
 local beastcamtoggle = false
-
-
 local neverfailtoggle = false
 local autointeracttoggle = false
 local autoplaytoggle = false
-
+local mevlanatoggle = false
+local mevlanaspeed = 25
+local speedhack = false
 
 PodsESPButton.MouseButton1Down:Connect(function()
 	if podstoggle == false then
@@ -777,6 +805,28 @@ AutoPlayButton.MouseButton1Down:Connect(function()
 	else
 		autoplaytoggle = false
 		AutoPlayButton.BackgroundColor3 = Color3.new(0.74902, 0, 0)
+	end
+end)
+
+
+
+MevlanaButton.MouseButton1Down:Connect(function()
+	if mevlanatoggle == false then
+		mevlanatoggle = true
+		MevlanaButton.BackgroundColor3 = Color3.new(0, 0.74902, 0)
+	else
+		mevlanatoggle = false
+		MevlanaButton.BackgroundColor3 = Color3.new(0.74902, 0, 0)
+	end
+end)
+
+SpeedHackButton.MouseButton1Down:Connect(function()
+	if speedhack == false then
+		speedhack = true
+		SpeedHackButton.BackgroundColor3 = Color3.new(0, 0.74902, 0)
+	else
+		speedhack = false
+		SpeedHackButton.BackgroundColor3 = Color3.new(0.74902, 0, 0)
 	end
 end)
 
@@ -1041,6 +1091,39 @@ spawn(function()
 		return old(self, unpack(args))
 	end)
 end)
+
+spawn(function()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local rootPart = character:WaitForChild("HumanoidRootPart")
+    local rotation = 0
+
+    while true do
+        if mevlanatoggle then
+            rotation = rotation + math.rad(mevlanaspeed)
+            rootPart.CFrame = CFrame.new(rootPart.Position) * CFrame.Angles(0, rotation, 0)
+        end
+        task.wait(0.03)
+    end
+end)
+
+spawn(function()
+	while true do
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoid = character:FindFirstChild("Humanoid")
+
+		if humanoid then
+			if speedhack then
+				humanoid.WalkSpeed = 100
+			else
+				humanoid.WalkSpeed = 16
+			end
+		end
+		wait(0.01)
+	end
+end)
+
 
 spawn(function()
 	game.Players.LocalPlayer.PlayerGui.ScreenGui.ActionBox:GetPropertyChangedSignal("Visible"):connect(function()
