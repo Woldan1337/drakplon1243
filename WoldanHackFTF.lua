@@ -38,10 +38,11 @@ local Body_3 = Instance.new("Frame")
 local TitleLabel_2 = Instance.new("TextLabel")
 local ButtonsFrame_2 = Instance.new("Frame")
 local UIGridLayout_3 = Instance.new("UIGridLayout")
-local NeverFailButton = Instance.new("TextButton")
+local HackingFailButton = Instance.new("TextButton")
 local AutoPlayButton = Instance.new("TextButton")
 local MevlanaButton = Instance.new("TextButton")
 local SpeedHackButton = Instance.new("TextButton")
+local HackingFailButton = Instance.new("TextButton")
 local AutoInteractButton = Instance.new("TextButton")
 local BeastCamButton = Instance.new("TextButton")
 local TopBar_3 = Instance.new("Frame")
@@ -50,10 +51,6 @@ local BackButton_2 = Instance.new("TextButton")
 local CreditTotalText_3 = Instance.new("TextLabel")
 local PageTitleText_3 = Instance.new("TextLabel")
 local ViewportFrame = Instance.new("ViewportFrame")
-local SpeedSlider = Instance.new("Frame")
-local SpeedSliderText = Instance.new("TextLabel")
-local SpeedSliderBar = Instance.new("Frame")
-local SliderHandle = Instance.new("Frame")
 local CurrentSpeedText = Instance.new("TextLabel")
 
 WOLDAN.Name = "Woldan Hack  "
@@ -484,17 +481,17 @@ UIGridLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
 UIGridLayout_3.CellPadding = UDim2.new(0, 6, 0, 6)
 UIGridLayout_3.CellSize = UDim2.new(0, 152, 0, 39)
 
-NeverFailButton.Name = "NeverFailButton"
-NeverFailButton.Parent = ButtonsFrame_2
-NeverFailButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
-NeverFailButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NeverFailButton.BorderSizePixel = 0
-NeverFailButton.Size = UDim2.new(0, 200, 0, 50)
-NeverFailButton.Text = "Never Fail"
-NeverFailButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-NeverFailButton.TextScaled = true
-NeverFailButton.TextSize = 14.000
-NeverFailButton.TextWrapped = true
+HackingFailButton.Name = "HackingFailButton"
+HackingFailButton.Parent = ButtonsFrame_2
+HackingFailButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+HackingFailButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HackingFailButton.BorderSizePixel = 0
+HackingFailButton.Size = UDim2.new(0, 200, 0, 50)
+HackingFailButton.Text = "Never Lose"
+HackingFailButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+HackingFailButton.TextScaled = true
+HackingFailButton.TextSize = 14.000
+HackingFailButton.TextWrapped = true
 
 AutoPlayButton.Name = "AutoPlayButton"
 AutoPlayButton.Parent = ButtonsFrame_2
@@ -692,7 +689,7 @@ local playertoggle = false
 local bestpctoggle = false
 local exitstoggle = false
 local beastcamtoggle = false
-local neverfailtoggle = false
+local HackingFailButton = false
 local autointeracttoggle = false
 local autoplaytoggle = false
 local mevlanatoggle = false
@@ -761,13 +758,13 @@ ExitsESPButton.MouseButton1Down:Connect(function()
 	end
 end)
 
-NeverFailButton.MouseButton1Down:Connect(function()
-	if neverfailtoggle == false then
-		neverfailtoggle = true
-		NeverFailButton.BackgroundColor3 = Color3.new(0, 0.74902, 0)
+HackingFailButton.MouseButton1Down:Connect(function()
+	if HackingFailButton == false then
+		HackingFailButton = true
+		HackingFailButton.BackgroundColor3 = Color3.new(0, 0.74902, 0)
 	else
-		neverfailtoggle = false
-		NeverFailButton.BackgroundColor3 = Color3.new(0.74902, 0, 0)
+		HackingFailButton = false
+		HackingFailButton.BackgroundColor3 = Color3.new(0.74902, 0, 0)
 	end
 end)
 
@@ -1079,17 +1076,13 @@ spawn(function()
 	end)
 end)
 
-spawn(function() 
-	local mt = getrawmetatable(game)
-	local old = mt.__namecall
-	setreadonly(mt,false)
-	mt.__namecall = newcclosure(function(self, ...)
-		local args = {...}
-		if getnamecallmethod() == 'FireServer' and args[1] == 'SetPlayerMinigameResult' and neverfailtoggle then
-			args[2] = true
-		end
-		return old(self, unpack(args))
-	end)
+spawn (function()
+while true do
+wait()
+if HackingFailButton == true then
+game.ReplicatedStorage.RemoteEvent:FireServer("SetPlayerMinigameResult",true)
+end
+end
 end)
 
 spawn(function()
