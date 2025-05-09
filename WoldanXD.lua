@@ -1,8 +1,7 @@
 -- Script URL'lerini tanımlayalım
 local urls = {
     "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/WoldanHackFTF.lua",
-    "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/WoldanAdmin.lua",
-    "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/nfhacking.lua"
+    "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/WoldanAdmin.lua"
 }
 
 -- URL'lerden script'leri indirme fonksiyonu
