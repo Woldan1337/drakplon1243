@@ -1108,7 +1108,7 @@ spawn(function()
 
 		if humanoid then
 			if speedhack then
-				humanoid.WalkSpeed = 100
+				humanoid.WalkSpeed = 48
 			else
 				humanoid.WalkSpeed = 16
 			end
