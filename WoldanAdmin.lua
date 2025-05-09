@@ -3226,7 +3226,7 @@ ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
 ImageLabel.BackgroundTransparency = 1
 ImageLabel.Position = UDim2.new(0, 0, 0, 0)
 ImageLabel.Size = UDim2.new(1, 0, 1, 0)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=1542162618"
+ImageLabel.Image = "http://www.roblox.com/asset/?id=118593216022909"
 Frame:TweenPosition(UDim2.new(0, 0, 0.2, 0), "Out", "Elastic", 3)
 wait(3.01)
 Frame:TweenPosition(UDim2.new(0, 0, 1.5, 0), "Out", "Elastic", 5)
