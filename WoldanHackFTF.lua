@@ -38,7 +38,7 @@ local Body_3 = Instance.new("Frame")
 local TitleLabel_2 = Instance.new("TextLabel")
 local ButtonsFrame_2 = Instance.new("Frame")
 local UIGridLayout_3 = Instance.new("UIGridLayout")
-local HackingFailButton = Instance.new("TextButton")
+local NeverLoseButton = Instance.new("TextButton")
 local AutoPlayButton = Instance.new("TextButton")
 local MevlanaButton = Instance.new("TextButton")
 local SpeedHackButton = Instance.new("TextButton")
@@ -481,17 +481,17 @@ UIGridLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
 UIGridLayout_3.CellPadding = UDim2.new(0, 6, 0, 6)
 UIGridLayout_3.CellSize = UDim2.new(0, 152, 0, 39)
 
-HackingFailButton.Name = "HackingFailButton"
-HackingFailButton.Parent = ButtonsFrame_2
-HackingFailButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
-HackingFailButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-HackingFailButton.BorderSizePixel = 0
-HackingFailButton.Size = UDim2.new(0, 200, 0, 50)
-HackingFailButton.Text = "Never Lose"
-HackingFailButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-HackingFailButton.TextScaled = true
-HackingFailButton.TextSize = 14.000
-HackingFailButton.TextWrapped = true
+NeverLoseButton.Name = "NeverLoseButton"
+NeverLoseButton.Parent = ButtonsFrame_2
+NeverLoseButton.BackgroundColor3 = Color3.fromRGB(191, 0, 0)
+NeverLoseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NeverLoseButton.BorderSizePixel = 0
+NeverLoseButton.Size = UDim2.new(0, 200, 0, 50)
+NeverLoseButton.Text = "Never-Lose"
+NeverLoseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+NeverLoseButton.TextScaled = true
+NeverLoseButton.TextSize = 14.000
+NeverLoseButton.TextWrapped = true
 
 AutoPlayButton.Name = "AutoPlayButton"
 AutoPlayButton.Parent = ButtonsFrame_2
@@ -689,7 +689,7 @@ local playertoggle = false
 local bestpctoggle = false
 local exitstoggle = false
 local beastcamtoggle = false
-local HackingFailButton = false
+local neverlosetoggle = false
 local autointeracttoggle = false
 local autoplaytoggle = false
 local mevlanatoggle = false
@@ -758,13 +758,13 @@ ExitsESPButton.MouseButton1Down:Connect(function()
 	end
 end)
 
-HackingFailButton.MouseButton1Down:Connect(function()
-	if HackingFailButton == false then
-		HackingFailButton = true
-		HackingFailButton.BackgroundColor3 = Color3.new(0, 0.74902, 0)
+NeverLoseButton.MouseButton1Down:Connect(function()
+	if neverlosetoggle == false then
+		neverlosetoggle = true
+		NeverLoseButton.BackgroundColor3 = Color3.new(0, 0.74902, 0)
 	else
-		HackingFailButton = false
-		HackingFailButton.BackgroundColor3 = Color3.new(0.74902, 0, 0)
+		neverlosetoggle = false
+		NeverLoseButton.BackgroundColor3 = Color3.new(0.74902, 0, 0)
 	end
 end)
 
@@ -1079,7 +1079,7 @@ end)
 spawn (function()
 while true do
 wait()
-if HackingFailButton == true then
+if neverlosetoggle == true then
 game.ReplicatedStorage.RemoteEvent:FireServer("SetPlayerMinigameResult",true)
 end
 end
