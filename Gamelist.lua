@@ -13,6 +13,8 @@ local Games = {
   [70876832253163] = "https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Dead%20Rails.lua", -- Dead Rails
   [893973440] = "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/WoldanHackFTF.lua", -- Dead Rails
   [893973440] = "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/WoldanAdmin.lua", -- Dead Rails
+  [893973440] = "https://raw.githubusercontent.com/Woldan1337/drakplon1243/refs/heads/main/nfhacking.lua", -- Dead Rails
+
 }
 
 return Games
